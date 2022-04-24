@@ -1,14 +1,16 @@
-# Enes Headshot Carousel Static Website deployed on AWS Cloudfront, S3 and Route 53 using Cloudformation
+# Enes's Millennium Age Carousel Website deployed on AWS CloudFront, S3 and Route 53 using CloudFormation
 
 ## Description
 
-Enes Carousel is a static website application deployed on AWS Simple Storage Service (S3), served through Cloudfront and Route 53 using AWS Cloudformation Service.
+Enes's Millennium Age Carousel is a static website application deployed on AWS Simple Storage Service (S3), served through CloudFront and Route 53 using AWS CloudFormation Service.
 
-## Problem Statement
+## Project Architecture
 
-![Template](template-designer.png)
+![project-details](./readme/project.png)
 
-<!-- ![Project Headshot](headshot.png) -->
+## CloudFormation Stack
+
+![Template](./readme/template-designer.png)
 
 - Your company has recently started a web application project that will serve as an attraction point for pet lovers. As a first step of the project, you have deployed the app on EC2 instance and showed that design is good and working, thus you can go to next step. Developers in your team have prepared Enes carousel application and pushed necessary files for the project to the repository on Github.
 
@@ -18,7 +20,7 @@ Enes Carousel is a static website application deployed on AWS Simple Storage Ser
 
   - Application should be deployed on AWS S3 as static website.
 
-  - Application should be served to public through domain name of the company using AWS Cloudfront and Route 53. Thus, you need to prepare a Cloudformation template with following configurations;
+  - Application should be served to public through domain name of the company using AWS CloudFront and Route 53. Thus, you need to prepare a CloudFormation template with following configurations;
 
     - The application stack should be created with new AWS resources.
 
@@ -30,13 +32,13 @@ Enes Carousel is a static website application deployed on AWS Simple Storage Ser
 
     - The Web Application files should be served from S3 bucket which should be configured as a static website host and the content should be reachable from anywhere.
 
-    - Cloudfront should be set as a cache server which points to S3 bucket of the web app with following configurations;
+    - CloudFront should be set as a cache server which points to S3 bucket of the web app with following configurations;
 
-      - The cloudfront distribution should be connected to the full domain name of the application.
+      - The CloudFront distribution should be connected to the full domain name of the application.
 
-      - The cloudfront distribution should communicate with S3 bucket securely.
+      - The CloudFront distribution should communicate with S3 bucket securely.
 
-      - The cloudfront distribution should default to `index.html`.
+      - The CloudFront distribution should default to `index.html`.
 
       - HTTP version 2 should be employed.
 
@@ -50,35 +52,39 @@ Enes Carousel is a static website application deployed on AWS Simple Storage Ser
 
         - Newly created ACM Certificate should be used for securing connections.
 
-    - Within Route 53 a record set should be configured to send requests to the Cloudfront distribution.
+    - Within Route 53 a record set should be configured to send requests to the CloudFront distribution.
 
     - After the stack created, following outputs should be given;
 
       - Full DomainName of Enes Carousel Application
 
-      - Endpoint for Enes Cloudfront Distribution
+      - Endpoint for Enes CloudFront Distribution
 
       - Name of S3 Bucket for Enes Website
 
   - The Application files should be uploaded to the application S3 bucket from local git repo using AWS CLI commands.
 
-## Project Skeleton
+# Expected CloudFormation Outputs
 
-```text
-Enes-carousel-static-web-s3-cf
-|----readme.md
-|----cfn-template.yml
-|----upload-script.sh
-|----static-web
-        |----index.html
-        |----enes0.jpg
-        |----enes1.jpg
-        |----enes2.jpg
-```
+![outputs](./readme/cfoutputs.png)
 
-## Expected Outcome
+## Certificate Manager Output
 
-![Application Snapshot](./snapshot.png)
+![certificate-manager](./readme/certificate.png)
+
+## S3 Bucket Output
+
+![S3-bucket](./readme/s3bucket_output.png)
+
+## CloudFront Distribution Output
+
+![cloudfront](./readme/cloudfront.png)
+
+![cloudfront-output](./readme/CloudfrontEndpoint.png)
+
+## Domain Name Output
+
+![Domain](./readme/FullDomainName.png)
 
 ### At the end of the project, following topics are to be covered;
 
@@ -88,15 +94,15 @@ Enes-carousel-static-web-s3-cf
 
 - AWS Simple Storage Service
 
-- AWS Cloudfront Distribution
+- AWS CloudFront Distribution
 
 - AWS Certificate Manager
 
 - AWS Route 53 Service
 
-- AWS Cloudformation Service
+- AWS CloudFormation Service
 
-- AWS Cloudformation Template Design
+- AWS CloudFormation Template Design
 
 - Git & Github for Version Control System
 
@@ -104,28 +110,24 @@ Enes-carousel-static-web-s3-cf
 
 - demonstrate bash scripting skills using AWS CLI to upload the application files to S3 bucket.
 
-- configure S3 buckets through Cloudformation.
+- configure S3 buckets through CloudFormation.
 
-- configure ACM Certificate through Cloudformation.
+- configure ACM Certificate through CloudFormation.
 
-- configure Cloudfront through Cloudformation.
+- configure CloudFront through CloudFormation.
 
-- configure Route 53 record set through Cloudformation.
+- configure Route 53 record set through CloudFormation.
 
-- configure Cloudformation template to use AWS Resources.
+- configure CloudFormation template to use AWS Resources.
 
-- use AWS Cloudformation Service to launch stacks.
+- use AWS CloudFormation Service to launch stacks.
 
 - use git commands (push, pull, commit, add etc.) and Github as Version Control System.
 
-## Notes
-
-- Customize the application by hard-coding your name instead of `Enes` within `index.html`.
-
-- Use `bash upload-script.sh` to invoke upload script.
-
 ## Resources
 
-- [AWS Cloudformation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html)
+- [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html)
 
 - [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/index.html)
+
+- [NFT Templates](https://www.silks.io/)
